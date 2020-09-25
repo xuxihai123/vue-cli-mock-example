@@ -76,11 +76,11 @@ export default {
   data() {
     return {
       apicall: "post:/api/users",
-      respData: ""
+      respData: "",
     };
   },
   props: {
-    msg: String
+    msg: String,
   },
   methods: {
     send() {
@@ -90,19 +90,19 @@ export default {
       if (args[0] === "post" || args[0] === "put") {
         data = {
           username: "abc",
-          password: "bbb"
+          password: "bbb",
         };
       }
       axios({
         method: args[0],
         url: args[1],
-        data: data
-      }).then(resp => {
+        data: data,
+      }).then((resp) => {
         console.log(resp);
         const data = JSON.stringify(resp.data, null, 2);
         document.getElementById("result").innerHTML = data;
       });
-    }
-  }
+    },
+  },
 };
 </script>
