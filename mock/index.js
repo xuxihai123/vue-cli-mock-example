@@ -1,4 +1,7 @@
+import user from "./user";
+
 export default {
+  "POST /api/login": user.login,
   "GET /api/users": function(req, res) {
     let query = req.query || {};
     return res.json({
